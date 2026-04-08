@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>播客 · H.com</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0d0d0d;--white:#f5f5f3;--grey1:#888;--grey2:#bbb;--grey3:#e2e2e0;}
+body{background:var(--white);color:var(--black);font-family:'EB Garamond',serif;font-weight:400;line-height:1.75;}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;height:52px;
+  background:var(--white);border-bottom:1px solid var(--grey3);
+}
+.nav-logo{font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.06em;color:var(--black);text-decoration:none;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey1);text-decoration:none;transition:color .15s;}
+.nav-links a:hover,.nav-links a.active{color:var(--black);}
+
+.page{max-width:680px;margin:0 auto;padding:100px 2.5rem 80px;}
+
+.page-back{
+  font-family:'DM Mono',monospace;font-size:0.58rem;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--grey1);text-decoration:none;
+  margin-bottom:2rem;display:block;transition:color .15s;
+}
+.page-back:hover{color:var(--black);}
+
+.page-header{margin-bottom:3.5rem;padding-bottom:2rem;border-bottom:1px solid var(--grey3);}
+.page-kicker{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--grey1);margin-bottom:1rem;}
+.page-title{font-size:clamp(2rem,4.5vw,3rem);font-weight:400;line-height:1.15;letter-spacing:-0.01em;}
+.page-desc{font-size:1rem;color:var(--grey1);line-height:1.85;margin-top:1rem;max-width:420px;}
+
+/* episode */
+.episode{
+  display:block;text-decoration:none;color:inherit;
+  padding:1.8rem 0;border-bottom:1px solid var(--grey3);
+  transition:opacity .15s;
+}
+.episode:hover{opacity:0.55;}
+
+.ep-meta{
+  font-family:'DM Mono',monospace;font-size:0.58rem;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--grey1);margin-bottom:0.7rem;
+  display:flex;gap:1.5rem;align-items:center;
+}
+
+.ep-num{color:var(--grey2);}
+
+/* play button */
+.ep-play{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:20px;height:20px;border:1px solid var(--grey2);border-radius:50%;
+  margin-right:4px;flex-shrink:0;
+}
+.ep-play::after{
+  content:'';
+  display:block;
+  width:0;height:0;
+  border-style:solid;
+  border-width:4px 0 4px 7px;
+  border-color:transparent transparent transparent var(--grey1);
+  margin-left:2px;
+}
+
+.ep-title{font-size:1.25rem;font-weight:400;line-height:1.2;margin-bottom:0.5rem;}
+.ep-desc{font-size:0.9rem;color:var(--grey1);line-height:1.75;}
+.ep-dur{
+  font-family:'DM Mono',monospace;font-size:0.58rem;
+  letter-spacing:0.08em;color:var(--grey2);
+}
+
+.coming-soon{
+  margin-top:3rem;padding:2rem;
+  border:1px dashed var(--grey3);
+  text-align:center;
+}
+.coming-soon p{
+  font-family:'DM Mono',monospace;font-size:0.6rem;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--grey2);
+}
+
+@media(max-width:600px){
+  nav{padding:0 1.5rem;}
+  .page{padding:90px 1.5rem 60px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">H.com</a>
+  <ul class="nav-links">
+    <li><a href="blog.html">博客</a></li>
+    <li><a href="podcast.html" class="active">播客</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <a class="page-back" href="index.html">← 返回</a>
+
+  <header class="page-header">
+    <p class="page-kicker">Podcast</p>
+    <h1 class="page-title">播客</h1>
+    <p class="page-desc">用声音延伸文字触达不到的地方。每期围绕一个问题展开，不求答案，只求想清楚。</p>
+  </header>
+
+  <a class="episode" href="#">
+    <div class="ep-meta">
+      <span class="ep-num">Ep. 03</span>
+      <span class="ep-play"></span>
+      <span>2026 · 03 · 01</span>
+      <span class="ep-dur">42 min</span>
+    </div>
+    <h2 class="ep-title">我们真的在思考吗，还是只是在反应？</h2>
+    <p class="ep-desc">本期聊"思考"这件事本身——什么叫主动思考，什么叫被动反应，以及为什么大多数人从未真正思考过。</p>
+  </a>
+
+  <a class="episode" href="#">
+    <div class="ep-meta">
+      <span class="ep-num">Ep. 02</span>
+      <span class="ep-play"></span>
+      <span>2026 · 02 · 10</span>
+      <span class="ep-dur">38 min</span>
+    </div>
+    <h2 class="ep-title">慢下来是一种竞争优势</h2>
+    <p class="ep-desc">在一个所有人都在加速的世界里，刻意慢下来反而是一种稀缺能力——这期聊聊为什么。</p>
+  </a>
+
+  <a class="episode" href="#">
+    <div class="ep-meta">
+      <span class="ep-num">Ep. 01</span>
+      <span class="ep-play"></span>
+      <span>2026 · 01 · 15</span>
+      <span class="ep-dur">29 min</span>
+    </div>
+    <h2 class="ep-title">为什么要开始这个播客</h2>
+    <p class="ep-desc">第一期，聊聊做这个播客的初衷，以及我希望这个节目能做成什么样子。</p>
+  </a>
+
+  <div class="coming-soon">
+    <p>更多内容即将上线 &nbsp;·&nbsp; 持续更新中</p>
+  </div>
+</div>
+
+</body>
+</html>
