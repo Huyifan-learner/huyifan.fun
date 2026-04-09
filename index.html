@@ -3,123 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>H.com</title>
+<title>huyifan.com</title>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--black:#0d0d0d;--white:#f5f5f3;--grey1:#888;--grey2:#bbb;--grey3:#e2e2e0;}
-html,body{height:100%;}
-body{background:var(--white);color:var(--black);font-family:'EB Garamond',serif;font-weight:400;}
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    html {
+        scroll-behavior: smooth;     /* 平滑滚动核心 */
+    }
+    
+    html, body {
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    
+    body {
+        background: var(--white);
+        color: var(--black);
+        font-family: 'EB Garamond', serif;
+        font-weight: 400;
+        line-height: 1.7;
+    }
 
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 3rem;height:52px;
-  background:var(--white);border-bottom:1px solid var(--grey3);
-}
-.nav-logo{font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.06em;color:var(--black);text-decoration:none;}
-.nav-links{display:flex;gap:2.5rem;list-style:none;}
-.nav-links a{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey1);text-decoration:none;transition:color .15s;}
-.nav-links a:hover{color:var(--black);}
+    :root {
+        --black: #0d0d0d;
+        --white: #f5f5f3;
+        --grey1: #888;
+        --grey2: #bbb;
+        --grey3: #e2e2e0;
+    }
 
-/* HERO — full viewport */
-.hero{
-  height:100vh;
-  display:flex;flex-direction:column;justify-content:center;
-  padding:0 3rem;
-  max-width:760px;
-  margin:0 auto;
-}
+    /* NAV - 固定在顶部 */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 3rem;
+        height: 52px;
+        background: var(--white);
+        border-bottom: 1px solid var(--grey3);
+    }
+    .nav-logo {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+        color: var(--black);
+        text-decoration: none;
+    }
+    .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+    }
+    .nav-links a {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.6rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--grey1);
+        text-decoration: none;
+        transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--black); }
 
-.hero-kicker{
-  font-family:'DM Mono',monospace;font-size:0.6rem;
-  letter-spacing:0.18em;text-transform:uppercase;
-  color:var(--grey1);margin-bottom:2.5rem;
-}
+    /* HERO 区域 */
+    .hero {
+        min-height: 100vh;
+        padding: 80px 3rem 60px;   /* 给顶部留出 nav 空间 */
+        max-width: 760px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-.hero h1{
-  font-size:clamp(2.6rem,5.5vw,4rem);
-  font-weight:400;line-height:1.18;letter-spacing:-0.01em;
-  margin-bottom:1.8rem;
-}
-.hero h1 em{font-style:italic;color:var(--grey1);}
+    .hero-kicker {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.6rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--grey1);
+        margin-bottom: 2.5rem;
+    }
 
-.hero-desc{
-  font-size:1.05rem;color:var(--grey1);
-  line-height:1.85;max-width:420px;
-  margin-bottom:3.5rem;
-}
+    .hero h1 {
+        font-size: clamp(2.6rem, 5.5vw, 4rem);
+        font-weight: 400;
+        line-height: 1.18;
+        letter-spacing: -0.01em;
+        margin-bottom: 1.8rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--grey1); }
 
-/* two big nav cards */
-.hero-nav{display:flex;gap:1px;margin-left:-3rem;margin-right:-3rem;}
+    .hero-desc {
+        font-size: 1.05rem;
+        color: var(--grey1);
+        line-height: 1.85;
+        max-width: 420px;
+        margin-bottom: 3.5rem;
+    }
 
-.hn-card{
-  flex:1;
-  display:flex;flex-direction:column;justify-content:space-between;
-  padding:2.5rem 3rem;
-  border-top:1px solid var(--grey3);
-  border-bottom:1px solid var(--grey3);
-  text-decoration:none;color:inherit;
-  background:var(--white);
-  transition:background .2s;
-  cursor:pointer;
-}
-.hn-card:first-child{border-right:1px solid var(--grey3);}
-.hn-card:hover{background:var(--black);color:var(--white);}
-.hn-card:hover .hn-label{color:#555;}
-.hn-card:hover .hn-arrow{color:var(--white);}
+    .hero-nav {
+        display: flex;
+        gap: 1px;
+        margin: 0 -3rem;
+    }
+    .hn-card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2.5rem 3rem;
+        border: 1px solid var(--grey3);
+        text-decoration: none;
+        color: inherit;
+        background: var(--white);
+        transition: background .2s;
+        cursor: pointer;
+    }
+    .hn-card:first-child { border-right: none; }
+    .hn-card:hover {
+        background: var(--black);
+        color: var(--white);
+    }
+    .hn-card:hover .hn-label { color: #555; }
+    .hn-card:hover .hn-arrow { color: var(--white); }
 
-.hn-label{
-  font-family:'DM Mono',monospace;font-size:0.58rem;
-  letter-spacing:0.16em;text-transform:uppercase;
-  color:var(--grey1);margin-bottom:1.8rem;
-  transition:color .2s;
-}
+    .hn-label {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.58rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--grey1);
+        margin-bottom: 1.8rem;
+    }
+    .hn-title { font-size: 1.5rem; font-weight: 400; line-height: 1.2; margin-bottom: 0.5rem; }
+    .hn-sub { font-size: 0.88rem; color: var(--grey1); line-height: 1.6; }
+    .hn-card:hover .hn-sub { color: #666; }
+    .hn-arrow {
+        font-family: 'DM Mono', monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        margin-top: 2rem;
+        color: var(--grey2);
+    }
 
-.hn-title{
-  font-size:1.5rem;font-weight:400;line-height:1.2;
-  margin-bottom:0.5rem;
-}
+    .quote {
+        margin-top: 6rem;
+        font-size: 1.05rem;
+        color: var(--grey1);
+        max-width: 460px;
+    }
 
-.hn-sub{font-size:0.88rem;color:var(--grey1);line-height:1.6;transition:color .2s;}
-.hn-card:hover .hn-sub{color:#666;}
-
-.hn-arrow{
-  font-family:'DM Mono',monospace;font-size:0.65rem;
-  letter-spacing:0.1em;margin-top:2rem;
-  color:var(--grey2);transition:color .2s;
-}
-
-@media(max-width:600px){
-  nav{padding:0 1.5rem;}
-  .hero{padding:0 1.5rem;}
-  .hero-nav{flex-direction:column;margin:0 -1.5rem;}
-  .hn-card{padding:2rem 1.5rem;}
-  .hn-card:first-child{border-right:none;border-bottom:1px solid var(--grey3);}
-}
+    @media (max-width: 600px) {
+        nav { padding: 0 1.5rem; }
+        .hero { padding: 80px 1.5rem 60px; }
+        .hero-nav { flex-direction: column; margin: 0 -1.5rem; }
+        .hn-card { padding: 2rem 1.5rem; }
+    }
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">H.com</a>
+  <a class="nav-logo" href="index.html">huyifan.fun</a>
   <ul class="nav-links">
-    <li><a href="blog.html">博客</a></li>
+    <li><a href="blog.html">个人创作空间</a></li>
     <li><a href="podcast.html">播客</a></li>
   </ul>
 </nav>
 
-<main class="hero">
-  <p class="hero-kicker">H.com &nbsp;·&nbsp; 个人主页</p>
-  <h1>思考<br>写作<br><em>表达</em></h1>
+<div class="hero">
+  <p class="hero-kicker">huyifan.fun &nbsp;·&nbsp; 个人主页</p>
+  <h1>思考<br>创造<br><em>表达</em></h1>
   <p class="hero-desc">这里是 H 的个人空间。我用文字整理思路，用声音延伸对话。</p>
 
   <div class="hero-nav">
     <a class="hn-card" href="blog.html">
-      <span class="hn-label">01 &nbsp;·&nbsp; Blog</span>
+      <span class="hn-label">01 &nbsp;·&nbsp; Space</span>
       <div>
-        <div class="hn-title">博客</div>
+        <div class="hn-title">个人创作空间</div>
         <div class="hn-sub">文字、思考与观点</div>
       </div>
       <span class="hn-arrow">进入 →</span>
@@ -133,7 +205,11 @@ nav{
       <span class="hn-arrow">进入 →</span>
     </a>
   </div>
-</main>
+
+  <div class="quote">
+    <p>士人有百折不回之真心，才有万变不穷之妙用</p>
+  </div>
+</div>
 
 </body>
 </html>
