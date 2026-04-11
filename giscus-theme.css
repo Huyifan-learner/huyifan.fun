@@ -1,0 +1,257 @@
+/*
+  giscus-theme.css
+  H.com 自定义评论主题
+  配色：黑 #0d0d0d · 白 #f5f5f3 · 灰系
+  字体：EB Garamond + DM Mono
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=DM+Mono:wght@300;400&display=swap');
+
+/* ── 全局变量覆盖 ── */
+:root {
+  --color-canvas-default:        #f5f5f3;
+  --color-canvas-subtle:         #eeede9;
+  --color-canvas-inset:          #f5f5f3;
+
+  --color-border-default:        #0d0d0d;
+  --color-border-muted:          #0d0d0d;
+
+  --color-fg-default:            #0d0d0d;
+  --color-fg-muted:              #888888;
+  --color-fg-subtle:             #bbbbbb;
+  --color-fg-on-emphasis:        #f5f5f3;
+
+  --color-accent-fg:             #0d0d0d;
+  --color-accent-emphasis:       #0d0d0d;
+  --color-accent-muted:          #e2e2e0;
+  --color-accent-subtle:         #eeede9;
+
+  --color-btn-text:              #0d0d0d;
+  --color-btn-bg:                #f5f5f3;
+  --color-btn-border:            #e2e2e0;
+  --color-btn-hover-bg:          #0d0d0d;
+  --color-btn-hover-border:      #0d0d0d;
+  --color-btn-hover-text:        #f5f5f3;
+  --color-btn-active-bg:         #0d0d0d;
+  --color-btn-primary-text:      #f5f5f3;
+  --color-btn-primary-bg:        #0d0d0d;
+  --color-btn-primary-border:    #0d0d0d;
+  --color-btn-primary-hover-bg:  #333333;
+
+  --color-neutral-muted:         #e2e2e020;
+  --color-neutral-subtle:        #eeede9;
+
+  --color-header-bg:             #f5f5f3;
+  --color-header-divider:        #e2e2e0;
+
+  --color-reactions-btn-bg: transparent;
+  --color-reactions-btn-hover-bg: #e2e2e0;
+}
+
+/* ── 整体容器 ── */
+.gsc-main {
+  font-family: 'EB Garamond', serif !important;
+  font-size: 1rem !important;
+  color: #0d0d0d !important;
+}
+
+/* ── 顶部加载/登录提示 ── */
+.gsc-header,
+.gsc-loading {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #888 !important;
+}
+
+/* ── 评论数量标题 ── */
+.gsc-comments-count,
+.gsc-reply-count {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.6rem !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: #888 !important;
+}
+
+/* ── 评论框 ── */
+.gsc-comment-box {
+  border: 1px solid #0d0d0d !important;
+  border-radius: 0 !important;
+  background: #f5f5f3 !important;
+  box-shadow: none !important;
+}
+
+.gsc-comment-box-tabs {
+  border-bottom: 1px solid #0d0d0d !important;
+  background: transparent !important;
+}
+
+.gsc-comment-box-tab-link {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.6rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #888 !important;
+  border-radius: 0 !important;
+}
+
+.gsc-comment-box-tab-link.selected,
+.gsc-comment-box-tab-link:hover {
+  color: #0d0d0d !important;
+  border-bottom: 1px solid #0d0d0d !important;
+  background: transparent !important;
+}
+
+.gsc-comment-box-textarea {
+  font-family: 'EB Garamond', serif !important;
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+  background: #f5f5f3 !important;
+  color: #0d0d0d !important;
+  border: none !important;
+  border-radius: 0 !important;
+  resize: vertical !important;
+  box-shadow: none !important;
+}
+
+.gsc-comment-box-textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.gsc-comment-box-bottom {
+  background: #eeede9 !important;
+  border-top: 1px solid #0d0d0d !important;
+  padding: 8px 12px !important;
+}
+
+/* ── 按钮 ── */
+.gsc-comment-box-bottom .btn,
+.btn-primary {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.6rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: background 0.15s, color 0.15s !important;
+}
+
+/* ── 单条评论 ── */
+.gsc-comment {
+  border: 1px solid #0d0d0d !important;
+  border-radius: 0 !important;
+  background: #f5f5f3 !important;
+  box-shadow: none !important;
+  margin-bottom: 2px !important;
+}
+
+.gsc-comment-header {
+  border-bottom: 1px solid #0d0d0d !important;
+  background: #eeede9 !important;
+  border-radius: 0 !important;
+  padding: 10px 14px !important;
+}
+
+.gsc-comment-author {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.62rem !important;
+  letter-spacing: 0.1em !important;
+  color: #0d0d0d !important;
+}
+
+.gsc-comment-author-avatar {
+  border-radius: 50% !important;
+  filter: grayscale(100%) !important;
+}
+
+.gsc-comment-content {
+  font-family: 'EB Garamond', serif !important;
+  font-size: 1rem !important;
+  line-height: 1.8 !important;
+  color: #0d0d0d !important;
+  padding: 14px !important;
+}
+
+/* markdown 内容 */
+.gsc-comment-content p {
+  margin-bottom: 0.8rem !important;
+}
+
+.gsc-comment-content code {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.82rem !important;
+  background: #e2e2e0 !important;
+  padding: 1px 5px !important;
+  border-radius: 0 !important;
+}
+
+.gsc-comment-footer {
+  border-top: 1px solid #0d0d0d !important;
+  background: transparent !important;
+  padding: 6px 14px !important;
+}
+
+/* ── 回复 ── */
+.gsc-replies {
+  border-top: 1px solid #0d0d0d !important;
+  background: #f5f5f3 !important;
+}
+
+.gsc-reply {
+  border-top: 1px solid #0d0d0d !important;
+  border-radius: 0 !important;
+}
+
+/* ── 时间戳 ── */
+.gsc-comment-author time,
+relative-time {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.58rem !important;
+  color: #bbb !important;
+  letter-spacing: 0.06em !important;
+}
+
+/* ── Reaction 表情 ── */
+.gsc-reactions-button {
+  border-radius: 0 !important;
+  font-size: 0.75rem !important;
+}
+
+/* ── 登录提示 ── */
+.gsc-login {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.1em !important;
+  text-align: center !important;
+  color: #888 !important;
+  padding: 2rem 0 !important;
+}
+
+.gsc-login a {
+  color: #0d0d0d !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid #0d0d0d !important;
+}
+
+.gsc-login a:hover {
+  border-color: #0d0d0d !important;
+}
+
+/* ── 无评论状态 ── */
+.gsc-no-discussion {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.6rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #bbb !important;
+  text-align: center !important;
+  padding: 2rem 0 !important;
+}
+
+/* ── 滚动条 ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #e2e2e0; }
