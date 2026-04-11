@@ -112,6 +112,14 @@ nav{
     <a href="article1.html">下一篇 →</a>
   </div>
 
+  <!-- ═══════════════════════════════════════════════
+       GISCUS 评论区
+       使用前请替换下方三个值：
+         data-repo        → "你的GitHub用户名/仓库名"
+         data-repo-id     → 从 giscus.app 获取
+         data-category-id → 从 giscus.app 获取
+       详见配置说明：https://giscus.app/zh-CN
+  ════════════════════════════════════════════════ -->
   <div class="comments">
     <p class="comments-label">评论</p>
     <script
@@ -125,7 +133,8 @@ nav{
       data-reactions-enabled="1"
       data-emit-metadata="0"
       data-input-position="bottom"
-      data-theme="https://huyifan-learner.github.io/huyifan.fun/giscus-theme.css"
+      data-theme="custom"
+      data-theme-css="https://huyifan.fun/giscus-theme.css"
       data-lang="zh-CN"
       data-loading="lazy"
       crossorigin="anonymous"
