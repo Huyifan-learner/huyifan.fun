@@ -1,93 +1,271 @@
 /*
-  giscus-theme.css
-  H.com 自定义评论主题 - 边框加强版（统一浅色 & 暗黑）
+  giscus-theme.css — H.com
+  黑白灰极简风，黑色边框版
 */
 
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=DM+Mono:wght@300;400&display=swap');
 
-/* ====================== 浅色模式 ====================== */
-:root {
-  --color-canvas-default:        #f5f5f3;
-  --color-canvas-subtle:         #eeede9;
-
-  --color-border-default:        #0d0d0d;     /* 主边框加强 */
-  --color-border-muted:          #666666;     /* 次要边框加深 */
-
-  --color-fg-default:            #0d0d0d;
-  --color-fg-muted:              #555555;     /* 加深文字 */
-  --color-fg-subtle:             #888888;
-}
-
-/* ====================== 暗黑模式 ====================== */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-canvas-default:        #1c1c1c;
-    --color-canvas-subtle:         #2a2a2a;
-
-    --color-border-default:        #e2e2e0;     /* 暗黑模式也用明显边框 */
-    --color-border-muted:          #777777;
-
-    --color-fg-default:            #f5f5f3;
-    --color-fg-muted:              #bbbbbb;
-  }
-}
-
-/* ====================== 通用样式（重点加强边框） ====================== */
-.gsc-main {
+/* ── 背景 ── */
+body,
+.gsc-main,
+.gsc-timeline,
+.gsc-comment-box,
+.gsc-comments {
+  background: #f5f5f3 !important;
+  color: #0d0d0d !important;
   font-family: 'EB Garamond', serif !important;
-  font-size: 1.02rem !important;
 }
 
-/* 评论框 - 明显边框 */
+/* ══════════════════════════════
+   评论输入框
+══════════════════════════════ */
 .gsc-comment-box {
-  border: 2px solid var(--color-border-default) !important;
-  background: var(--color-canvas-default) !important;
+  border: 1.5px solid #0d0d0d !important;
   border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
 }
 
-/* 单条评论 - 加强边框 */
+.gsc-comment-box-tabs {
+  background: #eeede9 !important;
+  border-bottom: 1.5px solid #0d0d0d !important;
+  padding: 0 12px !important;
+}
+
+.gsc-comment-box-tab-link {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.6rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #888 !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 0 !important;
+  padding: 10px 8px !important;
+}
+
+.gsc-comment-box-tab-link.selected,
+.gsc-comment-box-tab-link:hover {
+  color: #0d0d0d !important;
+  border-bottom-color: #0d0d0d !important;
+  background: transparent !important;
+}
+
+.gsc-comment-box-md-toolbar {
+  border-bottom: 1px solid #0d0d0d !important;
+  background: #f5f5f3 !important;
+}
+
+.gsc-comment-box-textarea-extras {
+  border-bottom: 1px solid #0d0d0d !important;
+}
+
+.gsc-comment-box-textarea,
+textarea {
+  font-family: 'EB Garamond', serif !important;
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+  background: #f5f5f3 !important;
+  color: #0d0d0d !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  resize: vertical !important;
+}
+
+.gsc-comment-box-textarea:focus,
+textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.gsc-comment-box-bottom {
+  background: #eeede9 !important;
+  border-top: 1.5px solid #0d0d0d !important;
+  padding: 10px 14px !important;
+}
+
+/* ══════════════════════════════
+   按钮
+══════════════════════════════ */
+.btn,
+button {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.6rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: background 0.15s, color 0.15s, border-color 0.15s !important;
+}
+
+.btn-primary,
+.btn-primary:focus {
+  background: #0d0d0d !important;
+  color: #f5f5f3 !important;
+  border: 1px solid #0d0d0d !important;
+}
+
+.btn-primary:hover {
+  background: #333 !important;
+  border-color: #333 !important;
+}
+
+.btn:not(.btn-primary) {
+  background: transparent !important;
+  color: #0d0d0d !important;
+  border: 1px solid #0d0d0d !important;
+}
+
+.btn:not(.btn-primary):hover {
+  background: #0d0d0d !important;
+  color: #f5f5f3 !important;
+}
+
+/* ══════════════════════════════
+   单条评论卡片
+══════════════════════════════ */
 .gsc-comment {
-  border: 2px solid var(--color-border-default) !important;
-  background: var(--color-canvas-default) !important;
-  margin-bottom: 16px !important;
+  border: 1.5px solid #0d0d0d !important;
+  border-radius: 0 !important;
+  background: #f5f5f3 !important;
+  box-shadow: none !important;
+  margin-bottom: 4px !important;
+  overflow: hidden !important;
 }
 
 .gsc-comment-header {
-  border-bottom: 1px solid var(--color-border-muted) !important;
-  background: var(--color-canvas-subtle) !important;
-  padding: 12px 16px !important;
-}
-
-/* 输入框 */
-.gsc-comment-box-textarea {
-  border: 2px solid var(--color-border-default) !important;
-  background: var(--color-canvas-default) !important;
-  color: var(--color-fg-default) !important;
-  padding: 16px !important;
-  font-size: 1.02rem !important;
-}
-
-/* 其他通用优化 */
-.gsc-comment-content {
-  color: var(--color-fg-default) !important;
-  line-height: 1.85 !important;
+  background: #eeede9 !important;
+  border-bottom: 1.5px solid #0d0d0d !important;
+  border-radius: 0 !important;
+  padding: 10px 16px !important;
 }
 
 .gsc-comment-author {
   font-family: 'DM Mono', monospace !important;
-  color: var(--color-fg-default) !important;
-}
-
-.gsc-comment-author time {
-  color: var(--color-fg-muted) !important;
-}
-
-/* 按钮 */
-.gsc-comment-box-bottom .btn,
-.btn-primary {
-  font-family: 'DM Mono', monospace !important;
   font-size: 0.62rem !important;
+  letter-spacing: 0.1em !important;
+  color: #0d0d0d !important;
+}
+
+.gsc-comment-author-avatar img {
+  border-radius: 50% !important;
+  filter: grayscale(100%) !important;
+}
+
+.gsc-comment-content {
+  font-family: 'EB Garamond', serif !important;
+  font-size: 1.05rem !important;
+  line-height: 1.85 !important;
+  color: #0d0d0d !important;
+  padding: 16px !important;
+}
+
+.gsc-comment-content p { margin-bottom: 0.8rem !important; }
+
+.gsc-comment-content code,
+code {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.82rem !important;
+  background: #e2e2e0 !important;
+  color: #0d0d0d !important;
+  padding: 1px 5px !important;
+  border-radius: 0 !important;
+}
+
+.gsc-comment-footer {
+  border-top: 1px solid #0d0d0d !important;
+  background: transparent !important;
+  padding: 8px 16px !important;
+}
+
+/* ══════════════════════════════
+   回复区
+══════════════════════════════ */
+.gsc-replies {
+  border-top: 1.5px solid #0d0d0d !important;
+  background: #f5f5f3 !important;
+  margin: 0 !important;
+}
+
+.gsc-reply {
+  border-top: 1px solid #0d0d0d !important;
+  border-radius: 0 !important;
+  padding: 12px 16px !important;
+}
+
+.gsc-reply-box {
+  border-top: 1px solid #0d0d0d !important;
+  padding: 12px 16px !important;
+  background: #eeede9 !important;
+}
+
+.gsc-reply-box input,
+.gsc-reply-box textarea {
+  border: 1px solid #0d0d0d !important;
+  border-radius: 0 !important;
+  background: #f5f5f3 !important;
+  font-family: 'EB Garamond', serif !important;
+}
+
+/* ══════════════════════════════
+   时间戳
+══════════════════════════════ */
+relative-time,
+time,
+.gsc-comment-author time {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.58rem !important;
+  letter-spacing: 0.06em !important;
+  color: #bbb !important;
+}
+
+/* ══════════════════════════════
+   Reaction 表情栏
+══════════════════════════════ */
+.gsc-reactions {
+  border-bottom: 1px solid #0d0d0d !important;
+  padding: 8px 16px !important;
+  background: #f5f5f3 !important;
+}
+
+.gsc-reactions-button {
+  border: 1px solid #0d0d0d !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #888 !important;
+  font-size: 0.8rem !important;
+  transition: background 0.15s !important;
+}
+
+.gsc-reactions-button:hover {
+  background: #0d0d0d !important;
+  color: #f5f5f3 !important;
+}
+
+/* ══════════════════════════════
+   登录 / 空状态
+══════════════════════════════ */
+.gsc-login,
+.gsc-no-discussion {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.6rem !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
-  transition: all 0.25s ease !important;
+  color: #888 !important;
+  text-align: center !important;
+  padding: 2.5rem 0 !important;
 }
+
+.gsc-login a {
+  color: #0d0d0d !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid #0d0d0d !important;
+  padding-bottom: 1px !important;
+}
+
+/* ══════════════════════════════
+   滚动条
+══════════════════════════════ */
+::-webkit-scrollbar { width: 3px; height: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ccc; }
