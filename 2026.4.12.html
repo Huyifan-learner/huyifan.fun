@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026.4.9 · H.com</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0d0d0d;--white:#f5f5f3;--grey1:#888;--grey2:#bbb;--grey3:#e2e2e0;}
+body{background:var(--white);color:var(--black);font-family:'EB Garamond',serif;font-weight:400;line-height:1.75;}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;height:52px;
+  background:var(--white);border-bottom:1px solid var(--grey3);
+}
+.nav-logo{font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.06em;color:var(--black);text-decoration:none;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey1);text-decoration:none;transition:color .15s;}
+.nav-links a:hover,.nav-links a.active{color:var(--black);}
+
+.article{max-width:620px;margin:0 auto;padding:100px 2.5rem 100px;}
+
+.article-back{
+  font-family:'DM Mono',monospace;font-size:0.58rem;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--grey1);text-decoration:none;
+  margin-bottom:2.5rem;display:block;transition:color .15s;
+}
+.article-back:hover{color:var(--black);}
+
+.article-meta{
+  font-family:'DM Mono',monospace;font-size:0.58rem;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--grey1);margin-bottom:1.5rem;
+  display:flex;gap:1.5rem;
+}
+
+.article h1{
+  font-size:clamp(1.9rem,4vw,2.8rem);
+  font-weight:400;line-height:1.18;letter-spacing:-0.01em;
+  margin-bottom:2.5rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--grey3);
+}
+
+/* body prose */
+.prose p{font-size:1.1rem;line-height:1.9;margin-bottom:1.4rem;color:#222;}
+.prose p:first-child::first-letter{font-size:3.2rem;line-height:0.8;float:left;margin:0.1em 0.1em 0 0;font-weight:400;}
+.prose h2{font-size:1.35rem;font-weight:400;font-style:italic;margin:2.5rem 0 1rem;}
+.prose blockquote{
+  margin:2rem 0;padding:0 0 0 1.5rem;
+  border-left:2px solid var(--grey3);
+  color:var(--grey1);font-style:italic;font-size:1.05rem;line-height:1.85;
+}
+
+/* footer nav */
+.article-footer{
+  margin-top:4rem;padding-top:2rem;
+  border-top:1px solid var(--grey3);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.article-footer a{
+  font-family:'DM Mono',monospace;font-size:0.58rem;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--grey1);text-decoration:none;transition:color .15s;
+}
+.article-footer a:hover{color:var(--black);}
+
+@media(max-width:600px){
+  nav{padding:0 1.5rem;}
+  .article{padding:90px 1.5rem 60px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">huyifan.fun</a>
+  <ul class="nav-links">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="blog.html" class="active">个人创作空间</a></li>
+    <li><a href="podcast.html">播客</a></li>
+    <li><a href="about.html">个人介绍</a></li>
+  </ul>
+</nav>
+
+<article class="article">
+  <a class="article-back" href="blog.html">← 个人创作空间</a>
+
+  <div class="article-meta">
+    <span>2026 · 04 · 12</span>
+  </div>
+
+  <h1>2026.04.12</h1>
+
+  <div class="prose">
+    <p></p>
+    <p>今天听别人讲书时，了解到了一个观点，要将自己做的事流程化，即把自己做的事去变为一个流程，也就是计算机编程里的结构化程序思想，将事情变为一个个流程，这样可以将你做的事变为可复制的，而且方便之后去进行循环重复与优化。</p>
+    <p>这类似于递归的思想，带着上一次的结果去开始，不断去重复和优化，就能将事情做得很好。就像是健身，这一次锻炼是带着上一次训练的成果来进行的，不断持续就能够有健康的体魄。</p>
+    <p>所以现在我尽量将自己每天的任务都流程化，记录自己做每件事的时间，这样才能够量化结果，分析出自己这次做的到底好不好，再去找到需要优化的地方，而不是单单凭着感觉去判断成效。</p>
+    <p><p>
+    <p></p>
+
+  </div>
+
+  <div class="article-footer">
+    <a href="2026.4.10.html">← 上一篇</a>
+    <a href="article1.html">下一篇 →</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       GISCUS 评论区
+       使用前请替换下方三个值：
+         data-repo        → "你的GitHub用户名/仓库名"
+         data-repo-id     → 从 giscus.app 获取
+         data-category-id → 从 giscus.app 获取
+       详见配置说明：https://giscus.app/zh-CN
+  ════════════════════════════════════════════════ -->
+  <div class="comments">
+    <p class="comments-label">评论</p>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="Huyifan-learner/huyifan.fun"
+      data-repo-id="R_kgDOR9GaAg"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOR9GaAs4C6mH8"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="noborder_light"
+      data-lang="zh-CN"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+
+</article>
+
+</body>
+</html>
